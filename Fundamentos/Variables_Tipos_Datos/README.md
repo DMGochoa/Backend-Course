@@ -16,4 +16,33 @@ Por ejemplo, una variable llamada 'edad' puede contener el número 30, mientras 
 Al avanzar en el curso, exploraremos cómo se utilizan estas 'cajas' en Python y Django, aprendiendo sobre diferentes tipos de datos y cómo las variables nos permiten manipular esa información para crear aplicaciones web dinámicas y funcionales. 
 </p>
 
-## Tipos
+## Tipos de Datos en Python
+
+<p align="justify">
+En Python, cada variable que utilizamos para almacenar datos tiene un 'tipo'. Este tipo define la naturaleza de los datos que la variable puede contener y cómo se pueden manipular. Comprender los tipos de datos es esencial para programar eficientemente en Python. A continuación, exploraremos los tipos de datos más comunes en Python.
+</p>
+
+- **Cadenas de Texto (String)**
+    <p align="justify">
+    Las cadenas de texto, conocidas como 'strings', se utilizan para almacenar texto. En Python, puedes definir una cadena de texto utilizando comillas simples (' ') o dobles (" "), pero no puedes mezclarlas en la misma cadena. Por ejemplo, el nombre de una persona o un mensaje de bienvenida pueden ser almacenados como cadenas de texto.
+    </p>
+
+- **Números Enteros (Integer)**
+
+    <p align="justify">
+    Los números enteros, o 'integers', se utilizan para almacenar números sin decimales. Son útiles para contar cosas, como la edad de una persona o el número de artículos en un carrito de compras.
+    </p>
+
+- **Números con Punto Decimal (Float)**
+
+    <p align="justify">
+    Los números con punto decimal, conocidos como 'floats', se utilizan para almacenar números con decimales. Son importantes cuando necesitas precisión, como en el caso de la estatura de una persona o el precio de un producto.
+    </p>
+
+- **Valores Booleanos (Boolean)**
+
+    <p align="justify">
+    Los valores booleanos solo pueden ser 'True' (Verdadero) o 'False' (Falso). Son extremadamente útiles para tomar decisiones dentro de tu código, como determinar si un usuario tiene una mascota o no.
+    </p>
+
+
