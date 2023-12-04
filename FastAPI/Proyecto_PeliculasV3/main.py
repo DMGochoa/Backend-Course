@@ -44,26 +44,6 @@ class Movie(BaseModel):
             }
         }
 
-
-movies = [
-    {
-        'id': 1,
-        'title': 'Avatar',
-        'overview': "En un exuberante planeta llamado Pandora viven los Na'vi, seres que ...",
-        'year': '2009',
-        'rating': 7.8,
-        'category': 'Acción'    
-    },
-    {
-        'id': 2,
-        'title': 'Avatar',
-        'overview': "En un exuberante planeta llamado Pandora viven los Na'vi, seres que ...",
-        'year': '2009',
-        'rating': 7.8,
-        'category': 'Acción'    
-    } 
-]
-
 class JWTBearer(HTTPBearer):
     async def __call__(self, request: Request):
         auth = await super().__call__(request)
@@ -116,20 +96,26 @@ def create_movie(movie: Movie) -> dict:
 
 @app.put("/movies/{id}", tags=['movies'], response_model=dict, status_code=200)
 def update_movie(id: int, movie: Movie) -> dict:
-    for movie in movies:
-        if movie['id'] == id:
-            movie['title'] = movie.title
-            movie['overview'] = movie.overview
-            movie['year'] = movie.year
-            movie['rating'] = movie.rating
-            movie['category'] = movie.category
+    db = Session()
+    result = db.query(MovieModel).filter(MovieModel.id == id).first()
+    if not result:
+        return JSONResponse(content={"message": "Movie not found"}, status_code=404)
+    result.title = movie.title
+    result.overview = movie.overview
+    result.year = movie.year
+    result.rating = movie.rating
+    result.category = movie.category
+    db.commit()
     return JSONResponse(content={"message": "Movie updated successfully"}, status_code=200)
 
 @app.delete("/movies/{id}", tags=['movies'], response_model=dict)
 def delete_movie(id: int) -> dict:
-    for movie in movies:
-        if movie['id'] == id:
-            movies.remove(movie)
+    db = Session()
+    result = db.query(MovieModel).filter(MovieModel.id == id).first()
+    if not result:
+        return JSONResponse(content={"message": "Movie not found"}, status_code=404)
+    db.delete(result)
+    db.commit()
     return JSONResponse(content={"message": "Movie deleted successfully"})
 
 @app.post("/login", tags=['auth'], response_model=dict, status_code=200)
