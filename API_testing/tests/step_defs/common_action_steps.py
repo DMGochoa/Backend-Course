@@ -31,9 +31,9 @@ def send_request(request, httpmethod, endpoint):
     """This function sends a request"""
     logging.info(f"Sending a request {httpmethod} to {endpoint} endpoint")
     req_manager = RequestManager.get_instance()
-    request_dict = request.before_scenario
-    logging.info(f"Request dict: {request_dict}")
-    endpoint = EndpointUtils.endpoint_autofill_tags(endpoint, request_dict)
+    #request_dict = request.response
+    #logging.info(f"Request dict: {request_dict}")
+    #endpoint = EndpointUtils.endpoint_autofill_tags(endpoint, request_dict)
     logging.info(f"Endpoint: {endpoint}")
     try:
         params = request.params

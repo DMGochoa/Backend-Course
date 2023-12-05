@@ -76,7 +76,7 @@ class RequestManager:
         self.response = requests.request(
             method=HttpMethods[http_method].value,
             url=f"{self.url}{endpoint}",
-            headers=self.headers,
+            #headers=self.headers,
             params=payload,
             timeout=(15),
         )
