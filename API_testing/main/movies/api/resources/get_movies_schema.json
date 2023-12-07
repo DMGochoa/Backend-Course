@@ -1,0 +1,101 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "default": [],
+    "title": "Root Schema",
+    "items": {
+        "type": "object",
+        "title": "A Schema",
+        "required": [
+            "id",
+            "title",
+            "overview",
+            "year",
+            "rating",
+            "category"
+        ],
+        "properties": {
+            "id": {
+                "type": "integer",
+                "title": "The id Schema",
+                "examples": [
+                    1,
+                    2
+                ]
+            },
+            "title": {
+                "type": "string",
+                "title": "The title Schema",
+                "examples": [
+                    "Avatar",
+                    "Avatar2"
+                ]
+            },
+            "overview": {
+                "type": "string",
+                "title": "The overview Schema",
+                "examples": [
+                    "En un exuberante planeta llamado Pandora viven los Na'vi"
+                ]
+            },
+            "year": {
+                "type": "integer",
+                "title": "The year Schema",
+                "examples": [
+                    2009,
+                    2023
+                ]
+            },
+            "rating": {
+                "type": "number",
+                "title": "The rating Schema",
+                "examples": [
+                    7.8
+                ]
+            },
+            "category": {
+                "type": "string",
+                "title": "The category Schema",
+                "examples": [
+                    "Acción",
+                    "Comedia"
+                ]
+            }
+        },
+        "examples": [{
+            "id": 1,
+            "title": "Avatar",
+            "overview": "En un exuberante planeta llamado Pandora viven los Na'vi",
+            "year": 2009,
+            "rating": 7.8,
+            "category": "Acción"
+        },
+        {
+            "id": 2,
+            "title": "Avatar2",
+            "overview": "En un exuberante planeta llamado Pandora viven los Na'vi",
+            "year": 2023,
+            "rating": 7.8,
+            "category": "Comedia"
+        }]
+    },
+    "examples": [
+        [{
+            "id": 1,
+            "title": "Avatar",
+            "overview": "En un exuberante planeta llamado Pandora viven los Na'vi",
+            "year": 2009,
+            "rating": 7.8,
+            "category": "Acción"
+        },
+        {
+            "id": 2,
+            "title": "Avatar2",
+            "overview": "En un exuberante planeta llamado Pandora viven los Na'vi",
+            "year": 2023,
+            "rating": 7.8,
+            "category": "Comedia"
+        }]
+    ]
+}

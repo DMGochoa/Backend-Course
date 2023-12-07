@@ -1,0 +1,15 @@
+{
+    "testing":{
+        "headers": {
+            "X-TrackerToken":"110a06c5c8fb13f8e7bbe193eed142be"
+        },
+        "url":"http://127.0.0.1:8000"
+    },
+    
+    "development":{
+        "headers": {
+            "X-TrackerToken":""
+        },
+        "url":"http://127.0.0.1:8000"
+    }
+}
